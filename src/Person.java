@@ -1,3 +1,4 @@
+import java.util.Comparator;
 
 public class Person {
 	private String firstName;
@@ -22,7 +23,6 @@ public class Person {
 		this.firstName = fisrtName;
 	}
 
-
 	// Last Name getter & setter
 	public String getLastName() {
 		return LastName;
@@ -33,7 +33,6 @@ public class Person {
 		}
 		LastName = lastName;
 	}
-
 
 	// Age getter & setter
 	public int getAge() {
@@ -46,9 +45,15 @@ public class Person {
 		this.age = age;
 	}
 
-
 	@Override
 	public String toString() {
 		return this.firstName + " " + this.LastName + ", age " + this.age;
 	}
+
+	// Comparator
+	public static Comparator<Person> CompareByAge = new Comparator<Person>() {
+		public int compare(Person person1, Person person2) {
+			return person1.getAge() - person2.getAge();
+		}
+	};
 }

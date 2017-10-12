@@ -1,3 +1,4 @@
+import java.util.Comparator;
 
 public class Employee extends Person  {
 	private double wage;
@@ -19,9 +20,24 @@ public class Employee extends Person  {
 		this.wage = wage;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Employee " + super.toString() + ", hourly wage $" + this.wage;
 	}
+
+	// Comparator
+	public static Comparator<Employee> CompareByWage = new Comparator<Employee>() {
+		public int compare(Employee employee1, Employee employee2) {
+
+			double wage1 = employee1.getWage();
+			double wage2 = employee2.getWage();
+
+			// equal
+			if (wage1 == wage2) {
+				return 0;
+			}
+
+			return wage1 > wage2 ? 1 : -1;
+		}
+	};
 }
