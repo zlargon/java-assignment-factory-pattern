@@ -15,7 +15,7 @@ public class Employee extends Person  {
     }
     public void setWage(double wage) {
         if (wage < 0) {
-            throw new RuntimeException("wage ( + wage + ) should not less than $0");
+            throw new RuntimeException("wage (" + wage + ") should not less than $0");
         }
         this.wage = wage;
     }

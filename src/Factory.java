@@ -1,8 +1,8 @@
 
 public class Factory {
 
-    public static int STUDENT  = 0;
-    public static int EMPLOYEE = 1;
+    public static final int STUDENT  = 0;
+    public static final int EMPLOYEE = 1;
 
     public static Person createPerson(int type, String firstName, String lastName, int age, double gpaOrWage) {
 

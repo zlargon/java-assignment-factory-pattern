@@ -40,7 +40,7 @@ public class Person {
     }
     public void setAge(final int age) {
         if (age <= 0) {
-            throw new RuntimeException("Age (" + age + ") should less than 0");
+            throw new RuntimeException("Age (" + age + ") should not less than 0");
         }
         this.age = age;
     }

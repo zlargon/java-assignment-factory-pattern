@@ -14,7 +14,7 @@
 
 ## 15 Points
 
-- sort by `last name` or `age` or `GPA`
+- Students sort by `last name` or `age` or `GPA`
 - Object.toString():
 
 ```
@@ -23,7 +23,7 @@ Student Dan Peters, age 16, GPA 4.0
 
 ## 15 Points
 
-- sort by `age`
+- Employees sort by `wage`
 - Object.toString():
 
 ```
