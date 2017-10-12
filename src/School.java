@@ -29,6 +29,7 @@ public class School {
     }
 
     public static void demo () {
+        System.out.println("=================SCHOOL=================");
         generateList();
 
         System.out.println("BEFORE:");

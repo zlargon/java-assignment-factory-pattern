@@ -30,6 +30,7 @@ public class Company {
     }
 
     public static void demo () {
+        System.out.println("=================COMPANY=================");
         generateList();
 
         System.out.println("BEFORE:");
