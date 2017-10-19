@@ -1,7 +1,53 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
 
 public class Student extends Person {
     private double GPA;
+
+    public static List<Student> parseCSV (final String filePath) {
+
+            Scanner input = null;
+            List<Student> list = new ArrayList<Student>();
+
+            try {
+                input = new Scanner(new File(filePath));
+
+                while (input.hasNextLine()) {
+                    String line = input.nextLine();
+                    Scanner scan = new Scanner(line);
+                    scan.useDelimiter(",");
+
+                    // check the type
+                    int type = scan.nextInt();
+                    if (type != Person.STUDENT) {
+                        continue;
+                    }
+
+                    // fetch data
+                    String firstName = scan.next();
+                    String lastName = scan.next();
+                    int age = scan.nextInt();
+                    double gpa = scan.nextDouble();
+
+                    // add student to list
+                    Student student = (Student) Factory.createPerson(type, firstName, lastName, age, gpa);
+                    list.add(student);
+
+                    // scan close
+                    scan.close();
+                }
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } finally {
+                input.close();
+            }
+            return list;
+    }
 
     // Constructor
     public Student (final String firstName, final String lastName, final int age, final double gpa) {

@@ -29,7 +29,7 @@ public class School {
 
     public static void demo () {
         System.out.println("=================SCHOOL=================");
-        generateList();
+        studentList = Student.parseCSV("people.csv");
 
         System.out.println("BEFORE:");
         showList();
