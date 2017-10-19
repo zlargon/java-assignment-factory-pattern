@@ -1,6 +1,9 @@
 import java.util.Comparator;
 
 public class Person {
+    public static final int STUDENT  = 0;
+    public static final int EMPLOYEE = 1;
+
     private String firstName;
     private String LastName;
     private int age;
