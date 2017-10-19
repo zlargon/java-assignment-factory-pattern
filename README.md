@@ -1,64 +1,29 @@
-# Factory Pattern Assignment (100 Total Points)
+# Factory Pattern Assignment: PART II (100 total points)
 
-## 20 Points
+Repeat the Factory Pattern Assignment but Instantiate all Student and Employee objects from CSV file (one or two CSV files).
 
-* Project name: workspace-leon-huang-o2-java1
-* include only one project `Project1`
-* include only one main method in the class `Driver`
-* You will zip this entire workspace (file named FOR EXAMPLE: workspace-dan-peters-o2-java1.zip and submit BEFORE DUE DATE (uploaded to BlackBoard.)
+Output each line to console as it is read from the CSV file.
 
-## 5 Points
+## 40 points:
 
-* create superclass `Person`
-* create derive class `Student` and `Employee`
+Parse Student CSV data and instantiate one class for each line in the CSV file.
 
-## 15 Points
+Parser should be in Student and class.
 
-- Students sort by `last name` or `age` or `GPA`
-- Object.toString():
+## 40 points:
 
-```
-Student Dan Peters, age 16, GPA 4.0
-```
+Parse Employee CSV data and instantiate one class for each line in the CSV file.
 
-## 15 Points
+Parser should be in Employee class.
 
-- Employees sort by `wage`
-- Object.toString():
+## 20 points: 
+
+Create and submit your entire project solution in an eclipse workspace, for example (for eclipse Oxygen, i.e. ‘o2’):
 
 ```
-Employee Dan Peters, age 16, hourly wage $15.75
+workspace-dan-peters-o2-java1
 ```
 
-## 20 Points
+including ONLY one project named Project1 in your eclipse workspace and ONLY one main method in the class named Driver.
 
-* use `Simple Factory Design` to create 3 `Student` and 3 `Employee`
-
-i.e. one factory class creates all target objects.
-
-### Note:
-
-In future, you will use `advanced Factory Design Pattern`, i.e. one derived factory class for each target object (or you may elect to use Factory Design Pattern immediately).
-
-## 10 Points
-
-Create one or more `Control Classes`.
-
-Your main method would look like:
-
-    Company.demo();
-    School.demo();
-
-## 10 Points
-
-You `control class` demo would look like:
-
-```java
-Company obj = new Company();
-obj.addEmployee(“Dan”, “Peters”, 16, 15.75);
-obj.sortEmployees();
-```
-
-## 5 Points
-
-Copy ALL console output and paste AS A COMMENT into the main method (at the end).
+You will zip this entire workspace (file named FOR EXAMPLE: workspace-dan-peters-o2-java1.zip and submit BEFORE DUE DATE (uploaded to BlackBoard.)
