@@ -1,7 +1,54 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
 
 public class Employee extends Person  {
     private double wage;
+
+
+    public static List<Employee> parseCSV (final String filePath) {
+
+            Scanner input = null;
+            List<Employee> list = new ArrayList<Employee>();
+
+            try {
+                input = new Scanner(new File(filePath));
+
+                while (input.hasNextLine()) {
+                    String line = input.nextLine();
+                    Scanner scan = new Scanner(line);
+                    scan.useDelimiter(",");
+
+                    // check the type
+                    int type = scan.nextInt();
+                    if (type != Person.EMPLOYEE) {
+                        continue;
+                    }
+
+                    // fetch data
+                    String firstName = scan.next();
+                    String lastName = scan.next();
+                    int age = scan.nextInt();
+                    double wage = scan.nextDouble();
+
+                    // add employee to list
+                    Employee employee = (Employee) Factory.createPerson(type, firstName, lastName, age, wage);
+                    list.add(employee);
+
+                    // scan close
+                    scan.close();
+                }
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } finally {
+                input.close();
+            }
+            return list;
+    }
 
     // Constructor
     public Employee (final String firstName, final String lastName, final int age, final double wage) {

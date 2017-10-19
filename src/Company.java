@@ -31,7 +31,7 @@ public class Company {
 
     public static void demo () {
         System.out.println("=================COMPANY=================");
-        generateList();
+        employeeList = Employee.parseCSV("people.csv");
 
         System.out.println("BEFORE:");
         showList();
